@@ -2,7 +2,7 @@
 JCtrlZ is a lightweight Java library that makes use of aspect-oriented programming (AOP) to capture particular events that happen
 in your Java (or more general: Java-byte code) programs. These events can be undone.
 
-Let's have a look at a small code snippet (which I guess says more than 1,000 words :)
+Let's have a look at a small code example (which I guess says more than 1,000 words):
 
 ```java
 @Undoable
@@ -36,8 +36,8 @@ operation.
 The _Undoable_ annotation provides a boolean parameter that indicates whether to track set operations which set the
 a new member variable value to the old one, i. e., no change. If you wish to not track setters, which do not set a new
 value, set this boolean value to _false_. The default is _true_, i. e., also track setting the same value. For 
-primitive values, this is obvious; for objects it isn't. The implementation uses the _hashCode_ function to objects
-determine if two objects are equal or not. Thus, if two objects with distinct memory location (this means "physically"
+primitive values, this is obvious; for objects it isn't. The implementation uses the _hashCode_ function to
+determine if two objects are equal or not. Thus, if two objects with distinct memory locations (this means "physically"
 two objects) but the same hashCode are set after each other only the first set would be tracked (in case the
 annotation's boolean value is set to _false_).
 
@@ -51,11 +51,11 @@ is a first-in-last-out queue as usual with undo operations.
 Follow these steps to integrate JCtrlZ into a new or existing Maven project:
 1. Download the provided release or package it yourself
 2. Make sure your pom.xml
-   - is properly configures to support AOP and
-   - has the JCtrlZ.jar as a (local) dependency and
+   - is properly configured to support AOP,
+   - has the JCtrlZ.jar as a (local) dependency, and
    - the library is configured to be an aspect library.
    
-   You can find a working pom.xml in [6].
+   You can find a working pom.xml in [3].
 
 That's it! You can set your annotations, run your targets, and convince yourself that it works :)
 
@@ -74,5 +74,5 @@ If you wish to make use of this project but cannot due to issues related to lice
 <hr>
 [1] http://web.ist.utl.pt/antonio.menezes.leitao/HomePage/index.html<br>
 [2] patrickk[dot]m[at]web[dot]de<br>
-[3] https://gist.github.com/ptrckkk/a8a0448b784237ab4c330f4c3ad93f4d
+[3] https://gist.github.com/ptrckkk/a8a0448b784237ab4c330f4c3ad93f4d<br>
 [4] https://github.com/ptrckkk/JCtrlZ/issues/1

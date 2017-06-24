@@ -31,6 +31,21 @@ public aspect UndoAspect {
     }
 
     /**
+     * This method checks if a local variable is annotated with the {@link ObjectNotUndoable} annotation.
+     * The processing of annotations of type "ElementType.LOCAL_VARIABLE" seems to be not fully supported (yet, as of
+     * June 2017), see [1] and [2].
+     * [1] https://stackoverflow.com/a/17365354
+     * [2] https://stackoverflow.com/a/13878403
+     *
+     * @param localVar The local variable to check.
+     * @return Returns true if the annotation is present, false otherwise.
+     */
+    private boolean isLocalVariableAnnotated(Object localVar) {
+        // TODO: Fill with logic
+        return true;
+    }
+    
+    /**
      * This function checks if for a given class duplicate setters shall be ignored.
      *
      * @param joinPoint The joint point that is related to the class to check. It is assumed, that the class really has
